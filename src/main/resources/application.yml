@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/gira
     username: postgres
-    password: admin
+    password: Duchuy123
     
   flyway:
     enabled: false
