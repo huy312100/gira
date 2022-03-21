@@ -17,7 +17,7 @@ public class SwaggerConfig {
 	public Docket getDocket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("cybersoft.javabackend.java16giragv"))
+				.apis(RequestHandlerSelectors.basePackage("cybersoft.javabackend.gira"))
 				.build()
 				.apiInfo(new ApiInfoBuilder().title("Gira Application")
 						.version("1.0.0")

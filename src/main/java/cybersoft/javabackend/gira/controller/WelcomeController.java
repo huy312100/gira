@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WelcomeController {
 
 	@GetMapping
-	public Object Welcome() {
-		return "Welcome to gira app";
+	public Object welcome() {
+		return "Welcome to Gira appication";
 	}
 }
