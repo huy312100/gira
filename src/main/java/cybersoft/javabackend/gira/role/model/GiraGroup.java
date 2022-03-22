@@ -50,4 +50,19 @@ public class GiraGroup extends BaseEntity{
 			)
 	private Set<GiraRole> roles=new LinkedHashSet<>();
 	
+	public void addRole(GiraRole role) {
+		roles.add(role);
+		role.getGroups().add(this);
+		
 	}
+	
+	public void removeRole(GiraRole role) {
+		roles.remove(role);
+		role.getGroups().remove(this);
+	}
+	
+	public void clearRole() {
+		this.roles.clear();
+	}
+	
+}
