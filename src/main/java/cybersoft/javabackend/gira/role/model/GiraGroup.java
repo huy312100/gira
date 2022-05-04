@@ -48,7 +48,7 @@ public class GiraGroup extends BaseEntity{
 			joinColumns =@JoinColumn(name="group_id"),
 			inverseJoinColumns = @JoinColumn(name="role_id")
 			)
-	private Set<GiraRole> roles=new LinkedHashSet<>();
+	private Set<GiraRole> roles = new LinkedHashSet<>();
 	
 	public void addRole(GiraRole role) {
 		roles.add(role);
