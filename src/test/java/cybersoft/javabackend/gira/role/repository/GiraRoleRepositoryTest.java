@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cybersoft.javabackend.gira.role.model.GiraRole;
 
 @SpringBootTest
+@Transactional
 public class GiraRoleRepositoryTest {
 	@Autowired
 	private GiraRoleRepository repository;
@@ -17,8 +18,8 @@ public class GiraRoleRepositoryTest {
 	@Test
 	public void shouldNotInsertRole() {
 		GiraRole role = GiraRole.builder()
-						.code("FOUR")
-						.description(null)
+						.code("FIVEH")
+						.description("Description")
 						.build();
 		
 		assertThrows(Exception.class, () -> repository.save(role));
