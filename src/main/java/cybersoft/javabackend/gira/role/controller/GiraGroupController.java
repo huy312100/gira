@@ -21,7 +21,9 @@ import cybersoft.javabackend.gira.role.dto.GiraGroupDTO;
 import cybersoft.javabackend.gira.role.dto.GiraGroupWithRolesDTO;
 import cybersoft.javabackend.gira.role.model.GiraGroup;
 import cybersoft.javabackend.gira.role.service.GiraGroupService;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("groups")
 public class GiraGroupController {
@@ -30,6 +32,8 @@ public class GiraGroupController {
 	
 	@GetMapping
 	public Object findAllGroups() {
+		log.info("Find all gira groups STARTED");
+
 		List<GiraGroupDTO> groups= service.findAllDto();
 		
 		return ResponseHelper.getResponse(groups, HttpStatus.OK);
