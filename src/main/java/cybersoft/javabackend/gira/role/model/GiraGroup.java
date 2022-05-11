@@ -19,6 +19,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.Type;
 
 import cybersoft.javabackend.gira.common.model.BaseEntity;
+import cybersoft.javabackend.gira.user.model.GiraUser;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -47,8 +48,16 @@ public class GiraGroup extends BaseEntity{
 			name="gira_group_role",
 			joinColumns =@JoinColumn(name="group_id"),
 			inverseJoinColumns = @JoinColumn(name="role_id")
-			)
-	private Set<GiraRole> roles = new LinkedHashSet<>();
+	)
+	private Set<GiraRole> roles = new LinkedHashSet<GiraRole>();
+	
+	@ManyToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+	@JoinTable(
+			name="gira_group_user",
+			joinColumns =@JoinColumn(name="group_id"),
+			inverseJoinColumns = @JoinColumn(name="user_id")
+	)
+	private Set<GiraUser> users= new LinkedHashSet<GiraUser>();
 	
 	public void addRole(GiraRole role) {
 		roles.add(role);
